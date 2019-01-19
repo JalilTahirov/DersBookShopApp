@@ -1,0 +1,15 @@
+﻿@model Ders2App.ViewModels.HomeViewModel
+
+
+    <h1>@Model.Message</h1>
+
+    
+
+    @foreach (var book in Model.Books)
+    {
+        <h2>Kitab Adi: @book.Name </h2>
+        <p>Kitab Haqqinda: @book.ShortDescription</p>
+    }
+
+
+
