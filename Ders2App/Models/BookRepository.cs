@@ -11,8 +11,11 @@ namespace Ders2App.Models
 
         public BookRepository(AppDbContext dbContext)
         {
+
             _dbContext = dbContext;
+
         }
+
 
 
         public IEnumerable<Book> GetAllBooks()
@@ -20,9 +23,11 @@ namespace Ders2App.Models
             return _dbContext.Books.OrderBy(b => b.Name);
         }
 
+
         public Book GetBookById(int bookid)
         {
             return _dbContext.Books.FirstOrDefault(b => b.id == bookid);
         }
+
     }
 }

@@ -1,15 +1,29 @@
 ﻿@model Ders2App.ViewModels.HomeViewModel
 
 
-    <h1>@Model.Message</h1>
+<h1>@Model.Message</h1>
 
-    
 
-    @foreach (var book in Model.Books)
-    {
-        <h2>Kitab Adi: @book.Name </h2>
-        <p>Kitab Haqqinda: @book.ShortDescription</p>
-    }
+
+@foreach (var book in Model.Books)
+{  
+
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <img src="@book.ImageThumbnailUrl" alt="">
+            <div class="caption">
+                <h3 class="pull-right">@book.Price.ToString("c")</h3>
+                <h3>
+                    @book.Name
+                </h3>
+                <p>@book.ShortDescription</p>
+            </div>
+        </div>
+    </div>
+
+}
+
+
 
 
 
